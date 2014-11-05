@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.7'
 # Use mysql as the database for Active Record
 gem 'mysql2'
+
+#Adding Bootstrap From https://github.com/seyhunak/twitter-bootstrap-rails
+gem "twitter-bootstrap-rails",  group: :test
+
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

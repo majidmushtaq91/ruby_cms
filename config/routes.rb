@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  get 'demo/index'
+  get 'about_us/about_us'
+
+  #get 'demo/index'
+  #match "demo/index", :to => "demo#index", :via => :get
+  #root :to => "demo#index"
+  #root "demo#index"
+  match ':controller(/:action(/:id))', :via => :get
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
