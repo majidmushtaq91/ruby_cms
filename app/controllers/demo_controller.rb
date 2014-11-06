@@ -3,7 +3,9 @@ class DemoController < ApplicationController
   layout false
   def index
     #render(:template => 'demo/index')
-    render('demo/index')
+    #render('demo/index')
+    @id = params['id']
+    @page = params[:page]
   end
 
   def hello

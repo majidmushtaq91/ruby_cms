@@ -2,4 +2,15 @@
 <p>Hello World From index!</p>
 <p>Riding Ruby on Rails !</p>
 
+<%= link_to('hello', {:action => 'hello'}) %>
+<hr />
+ID : <%= params[:id] %> <br>
+ID : <%= @id %> <br>
+Page : <%= @page %> <br>
+Next Page : <%= @page.to_i + 1 %> <br>
+
+<hr />
+
+<%= params.inspect %>
+
 
