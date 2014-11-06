@@ -6,6 +6,7 @@ class DemoController < ApplicationController
     #render('demo/index')
     @id = params['id']
     @page = params[:page]
+    @type = params[:type]
   end
 
   def hello
@@ -16,8 +17,8 @@ class DemoController < ApplicationController
   end
 
   def majid
-    #render(:template => 'demo/index')
-    render('demo/majid')
+    render(:template => 'layouts/new_page')
+
   end
 
   def other_hello

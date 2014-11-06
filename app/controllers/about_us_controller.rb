@@ -1,5 +1,5 @@
 class AboutUsController < ApplicationController
-  layout false
+   layout false
   def index
 
   end

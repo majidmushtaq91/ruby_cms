@@ -7,7 +7,7 @@ gem 'rails', '4.1.7'
 gem 'mysql2'
 
 #Adding Bootstrap From https://github.com/seyhunak/twitter-bootstrap-rails
-gem "twitter-bootstrap-rails",  group: :test
+gem "twitter-bootstrap-rails"
 
 # Use SCSS for stylesheets
 #gem 'sass-rails', '~> 4.0.3'

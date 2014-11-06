@@ -7,8 +7,12 @@
 ID : <%= params[:id] %> <br>
 ID : <%= @id %> <br>
 Page : <%= @page %> <br>
+Type : <%= @type %> <br>
 Next Page : <%= @page.to_i + 1 %> <br>
 
+<% if !@majid %>
+    This is greater then
+<% end %>
 <hr />
 
 <%= params.inspect %>
