@@ -26,6 +26,6 @@ class DemoController < ApplicationController
   end
 
   def google
-    redirect_to("http://google.com")
+    redirect_to('http://google.com')
   end
 end

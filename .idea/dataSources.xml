@@ -4,8 +4,8 @@
     <data-source source="LOCAL" name="Rails cms: development" uuid="71ef401b-8aa2-4f71-863f-b85fd366428b">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://127.0.0.1/cms_development</jdbc-url>
-      <user-name>root</user-name>
+      <jdbc-url>jdbc:mysql://127.0.0.1/simple_cms_development</jdbc-url>
+      <user-name>sam</user-name>
       <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
