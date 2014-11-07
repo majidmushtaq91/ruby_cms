@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107191242) do
+ActiveRecord::Schema.define(version: 20141107194915) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name",      limit: 30,               null: false
@@ -58,5 +58,15 @@ ActiveRecord::Schema.define(version: 20141107191242) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "widgets", force: true do |t|
+    t.integer  "page_id"
+    t.string   "widget_title"
+    t.text     "widget_content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "widgets", ["page_id"], name: "index_widgets_on_page_id", using: :btree
 
 end
