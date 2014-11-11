@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+
   get 'contact_us/index'
 
   get 'about_us/about_us'
