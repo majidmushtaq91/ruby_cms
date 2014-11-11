@@ -5,7 +5,7 @@
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/simple_cms_development</jdbc-url>
-      <user-name>sam</user-name>
+      <user-name>root</user-name>
       <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>

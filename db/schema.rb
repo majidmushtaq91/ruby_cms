@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141107194915) do
+ActiveRecord::Schema.define(version: 20141108113851) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name",      limit: 30,               null: false
@@ -24,6 +24,19 @@ ActiveRecord::Schema.define(version: 20141107194915) do
   end
 
   add_index "admin_users", ["username"], name: "index_admin_users_on_username", using: :btree
+
+  create_table "menus", force: true do |t|
+    t.integer  "page_id"
+    t.string   "title",                            null: false
+    t.integer  "position",                         null: false
+    t.string   "link",                             null: false
+    t.string   "menu_class", default: "main_menu"
+    t.boolean  "status",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menus", ["page_id"], name: "index_menus_on_page_id", using: :btree
 
   create_table "pages", force: true do |t|
     t.integer  "subject_id"
