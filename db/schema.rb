@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141109202133) do
+ActiveRecord::Schema.define(version: 20141110211521) do
 
   create_table "admin_users", force: true do |t|
     t.string   "first_name",      limit: 30,               null: false
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 20141109202133) do
   end
 
   add_index "pages_widgets", ["page_id", "widget_id"], name: "index_pages_widgets_on_page_id_and_widget_id", using: :btree
+
+  create_table "section_edits", force: true do |t|
+    t.integer  "admin_user_id"
+    t.integer  "section_id"
+    t.string   "summary"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "section_edits", ["admin_user_id", "section_id"], name: "index_section_edits_on_admin_user_id_and_section_id", using: :btree
 
   create_table "sections", force: true do |t|
     t.integer  "page_id"
