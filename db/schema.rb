@@ -32,6 +32,19 @@ ActiveRecord::Schema.define(version: 20141109202133) do
 
   add_index "admin_users_pages", ["admin_user_id", "page_id"], name: "index_admin_users_pages_on_admin_user_id_and_page_id", using: :btree
 
+  create_table "menus", force: true do |t|
+    t.integer  "page_id"
+    t.string   "title",                            null: false
+    t.integer  "position",                         null: false
+    t.string   "link",                             null: false
+    t.string   "menu_class", default: "main_menu"
+    t.boolean  "status",     default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menus", ["page_id"], name: "index_menus_on_page_id", using: :btree
+
   create_table "pages", force: true do |t|
     t.integer  "subject_id"
     t.string   "name"
