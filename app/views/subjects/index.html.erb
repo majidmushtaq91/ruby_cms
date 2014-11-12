@@ -51,7 +51,8 @@
 
   <table class="listing standard-table " summary="Subject list">
     <tr class="header">
-      <th>&nbsp;</th>
+      <th>ID</th>
+      <th>Position</th>
       <th>Subject</th>
       <th>Visible</th>
       <th>Pages</th>
@@ -59,6 +60,7 @@
     </tr>
     <% @subjects.each do |subject| %>
         <tr>
+          <td><%= subject.id %></td>
           <td><%= subject.position %></td>
           <td><%= subject.name %></td>
           <td class="center"><%= subject.visible ? 'Yes' : 'No' %></td>

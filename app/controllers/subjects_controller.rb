@@ -15,15 +15,14 @@ class SubjectsController < ApplicationController
     @subject = Subject.new({:name => 'Default'})
   end
 
-
   def delete
     @subject = Subject.find(params[:id])
-    if @subject.destroy
-      redirect_to(:action => 'index')
-    else
-      redirect_to(:action => 'index')
-    end
+  end
 
+  def destroy
+    @subject = Subject.find(params[:id])
+    @subject.destroy
+    redirect_to(:action => 'index')
   end
 
   def create
