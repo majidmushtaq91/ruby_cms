@@ -46,11 +46,11 @@
 
 <div class="subjects index">
   <h2>Subjects</h2>
-    <% if !flash[:notice].blank? %>
+  <% if !flash[:notice].blank? %>
       <div class="notice">
         <%= flash[:notice] %>
       </div>
-    <% end %>
+  <% end %>
 
   <%= link_to("Add New Subject", {:action => 'new'}, :class => 'action new') %>
 
@@ -58,22 +58,24 @@
     <tr class="header">
       <th>ID</th>
       <th>Position</th>
-      <th>Subject</th>
+      <th>Name</th>
       <th>Visible</th>
-      <th>Pages</th>
+      <th>Permalink</th>
+      <th>Created At</th>
       <th>Actions</th>
     </tr>
-    <% @subjects.each do |subject| %>
+    <% @page.each do |page| %>
         <tr>
-          <td><%= subject.id %></td>
-          <td><%= subject.position %></td>
-          <td><%= subject.name %></td>
-          <td class="center"><%= subject.visible ? 'Yes' : 'No' %></td>
-          <td class="center"><%= subject.pages.size %></td>
+          <td><%= page.id %></td>
+          <td><%= page.position %></td>
+          <td><%= page.name %></td>
+          <td><%= page.visible %></td>
+          <td><%= page.permalink %></td>
+          <td><%= page.created_at %></td>
           <td class="actions">
-            <%= link_to("Show", {:action => 'show', :id => subject.id }, :class => 'action show') %>
-            <%= link_to("Edit", {:action => 'edit', :id => subject.id }, :class => 'action edit') %>
-            <%= link_to("Delete", {:action => 'delete', :id => subject.id}, :class => 'action delete') %>
+            <%= link_to("Show", {:action => 'show', :id => page.id }, :class => 'action show') %>
+            <%= link_to("Edit", {:action => 'edit', :id => page.id }, :class => 'action edit') %>
+            <%= link_to("Delete", {:action => 'delete', :id => page.id}, :class => 'action delete') %>
           </td>
         </tr>
     <% end %>
