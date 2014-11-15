@@ -12,6 +12,10 @@ class PageController < ApplicationController
   end
 
   def create
+    @page = Page.new(page_params)
+    @page.save
+    flash[:notice] = 'Page created successfully !'
+    redirect_to(:action => 'index')
   end
 
   def edit
@@ -28,9 +32,14 @@ class PageController < ApplicationController
   end
 
   def delete
+    @page = Page.find(params[:id])
+
   end
 
   def destroy
+    page = Page.find(params[:id]).destroy
+    flash[:notice] = "Page has been remove '#{page.name}'"
+    redirect_to(:action => 'index')
   end
 
   private

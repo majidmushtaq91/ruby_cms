@@ -5,26 +5,19 @@
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/simple_cms_development</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails cms: test" uuid="d9c7ec56-f85d-4df6-af34-893cb28a6c6c">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/cms_test</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails cms: production" uuid="a93081d8-9063-4155-9949-445c8cb8e51d">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/cms_production</jdbc-url>
-      <user-name>cms</user-name>
-      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe9dfe7dff9dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
       <libraries />
     </data-source>
   </component>
 </project>
-
