@@ -18,6 +18,10 @@
           <th>Visible</th>
           <td> <%= f.select :visible, options_for_select([["Yes", 1], ["No", 2]]) %></td>
         </tr>
+        <tr>
+          <th>Subject ID</th>
+          <td><%= f.text_field(:subject_id) %></td></td>
+        </tr>
       </table>
 
       <div class="form-buttons">

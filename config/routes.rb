@@ -1,6 +1,18 @@
 Rails.application.routes.draw do
 
 
+  get 'section/index'
+
+  get 'section/show'
+
+  get 'section/new'
+
+  get 'section/update'
+
+  get 'section/edit'
+
+  get 'section/delete'
+
   get 'contact_us/index'
 
   get 'about_us/about_us'

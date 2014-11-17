@@ -1,0 +1,41 @@
+
+<div class="subjects index">
+  <h2>Pages</h2>
+  <% if !flash[:notice].blank? %>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+  <% end %>
+
+  <%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
+
+  <table class="listing standard-table " summary="Subject list">
+    <tr class="header">
+      <th>ID</th>
+      <th>Position</th>
+      <th>Page ID</th>
+      <th>Name</th>
+      <th>Visible</th>
+      <th>Content type</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+    <% @section.each do |f| %>
+        <tr>
+          <td><%= f.id %></td>
+          <td><%= f.position %></td>
+          <td><%= f.page_id %></td>
+          <td><%= f.name %></td>
+          <td><%= f.visible %></td>
+
+          <td><%= f.content_type %></td>
+          <td><%= f.created_at %></td>
+          <td class="actions">
+            <%= link_to("Show", {:action => 'show', :id => f.id }, :class => 'action show') %>
+            <%= link_to("Edit", {:action => 'edit', :id => f.id }, :class => 'action edit') %>
+            <%= link_to("Delete", {:action => 'delete', :id => f.id}, :class => 'action delete') %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+</div>
