@@ -2,6 +2,8 @@
 <div class="index">
   <h2><%= @page_title %></h2>
 
+
+
   <%= link_to("Add new item", {:action => 'new'}, :class => 'btn btn-success') %>
 
   <table class="table table-bordered" style="margin-top: 10px;">
@@ -24,7 +26,7 @@
           <td><%= f.position %></td>
           <td><%= f.page_id %></td>
           <td><%= f.name %></td>
-          <td class="center"><%= f.visible ? 'Yes' : 'No' %></td>
+          <td class="center"><%= status_tag(f.visible) %></td>
           <td class="center"><%= f.content_type %></td>
           <td class="center"><%= f.created_at %></td>
           <td class="actions">

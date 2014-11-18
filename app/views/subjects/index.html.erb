@@ -5,6 +5,7 @@
 
   <%= link_to("Add new item", {:action => 'new'}, :class => 'btn btn-success') %>
 
+
   <table class="table table-bordered" style="margin-top: 10px;">
     <thead>
     <tr>
@@ -18,11 +19,11 @@
     </thead>
     <tbody>
     <% @subjects.each do |f| %>
-        <tr>
+        <tr class="<%= cycle("even", "odd")  %>">
           <td><%= f.id %></td>
           <td><%= f.position %></td>
           <td><%= f.name %></td>
-          <td class="center"><%= f.visible ? 'Yes' : 'No' %></td>
+          <td class="center"><%= status_tag(f.visible) %></td>
           <td class="center"><%= f.pages.size %></td>
           <td class="actions">
             <div class="dropdown">
@@ -44,4 +45,6 @@
     <% end %>
     </tbody>
   </table>
+  <p><%= pluralize(@subjects.size, 'subject') %> Found ! </p>
+  <hr />
 </div>

@@ -22,7 +22,7 @@
           <td><%= f.position %></td>
           <td><%= f.subject_id %></td>
           <td><%= f.name %></td>
-          <td class="center"><%= f.visible ? 'Yes' : 'No' %></td>
+          <td class="center"><%= status_tag(f.visible) %></td>
           <td class="center"><%= f.permalink %></td>
           <td class="center"><%= f.created_at %></td>
           <td class="actions">

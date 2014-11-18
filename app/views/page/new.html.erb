@@ -5,24 +5,7 @@
 
   <%= form_for(:page, :url => {:action => 'create'}) do |f| %>
 
-      <table summary="Subject form fields">
-        <tr>
-          <th>Name</th>
-          <td><%= f.text_field(:name) %></td>
-        </tr>
-        <tr>
-          <th>Position</th>
-          <td><%= f.text_field(:position) %></td>
-        </tr>
-        <tr>
-          <th>Visible</th>
-          <td><%= f.select :visible, options_for_select([["Yes", 1], ["No", 2]]) %></td></td>
-        </tr>
-        <tr>
-          <th>Subject ID</th>
-          <td><%= f.text_field(:subject_id) %></td></td>
-        </tr>
-      </table>
+      <%= render(:partial => "page/form", :locals => {:f => f}) %>
 
       <div class="form-buttons">
         <%= submit_tag("Create Page") %>
