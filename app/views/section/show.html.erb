@@ -1,13 +1,10 @@
+<% @page_title = "View Section" %>
+
+<h2><%= @page_title %></h2>
+
 <%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
 
 <div class="subjects show">
-  <h2>Show Section</h2>
-  <% if !flash[:notice].blank? %>
-      <div class="notice">
-        <%= flash[:notice] %>
-      </div>
-  <% end %>
-
   <table summary="Section detail view">
     <tr>
       <th>Name</th>

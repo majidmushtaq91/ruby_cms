@@ -1,35 +1,48 @@
-<div class="subjects index">
+<div class="index">
   <h2>Pages</h2>
+  <%= link_to("Add new item", {:action => 'new'}, :class => 'btn btn-success') %>
 
-
-  <%= link_to("Add New Page", {:action => 'new'}, :class => 'action new') %>
-
-  <table class="listing standard-table " summary="Subject list">
-    <tr class="header">
-      <th>ID</th>
-      <th>Position</th>
-      <th>Subject ID</th>
-      <th>Name</th>
-      <th>Visible</th>
-      <th>Permalink</th>
-      <th>Created At</th>
-      <th>Actions</th>
+  <table class="table table-bordered" style="margin-top: 10px;">
+    <thead>
+    <tr>
+      <th><i class="glyphicon glyphicon-asterisk"></i> ID</th>
+      <th><i class="glyphicon glyphicon-align-left"></i> Position</th>
+      <th><i class="glyphicon glyphicon-align-left"></i> Subject</th>
+      <th><i class="glyphicon glyphicon-bookmark"></i> Name</th>
+      <th><i class="glyphicon glyphicon-eye-open"></i> Visible</th>
+      <th><i class="glyphicon glyphicon-link"></i> Permalink</th>
+      <th><i class="glyphicon glyphicon-calendar"></i>Created At</th>
+      <th><i class="glyphicon glyphicon-link"></i> Actions</th>
     </tr>
-    <% @page.each do |page| %>
+    </thead>
+    <tbody>
+    <% @page.each do |f| %>
         <tr>
-          <td><%= page.id %></td>
-          <td><%= page.position %></td>
-          <td><%= page.subject_id %></td>
-          <td><%= page.name %></td>
-          <td><%= page.visible %></td>
-          <td><%= page.permalink %></td>
-          <td><%= page.created_at %></td>
+          <td><%= f.id %></td>
+          <td><%= f.position %></td>
+          <td><%= f.subject_id %></td>
+          <td><%= f.name %></td>
+          <td class="center"><%= f.visible ? 'Yes' : 'No' %></td>
+          <td class="center"><%= f.permalink %></td>
+          <td class="center"><%= f.created_at %></td>
           <td class="actions">
-            <%= link_to("Show", {:action => 'show', :id => page.id }, :class => 'action show') %>
-            <%= link_to("Edit", {:action => 'edit', :id => page.id }, :class => 'action edit') %>
-            <%= link_to("Delete", {:action => 'delete', :id => page.id}, :class => 'action delete') %>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                Action
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><%= link_to(" Show", {:action => 'show', :id => f.id }, :class => 'glyphicon glyphicon-eye-open', :title => 'Show', :role => "presentation" ) %></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><%= link_to(" Edit", {:action => 'edit', :id => f.id }, :class => 'glyphicon glyphicon-edit', :title => "Edit", :role => "presentation") %></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><%= link_to(" Delete", {:action => 'delete', :id => f.id}, :class => 'glyphicon glyphicon-remove', :title => "Delete") %></li>
+                <li role="presentation" class="divider"></li>
+              </ul>
+            </div>
           </td>
         </tr>
     <% end %>
+    </tbody>
   </table>
 </div>

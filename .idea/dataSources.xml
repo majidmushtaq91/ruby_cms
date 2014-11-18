@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4123938059">
+  <component name="DataSourceManagerImpl" format="xml" hash="1135744276">
     <data-source source="LOCAL" name="Rails cms: development" uuid="71ef401b-8aa2-4f71-863f-b85fd366428b">
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/simple_cms_development</jdbc-url>
-      <user-name>root</user-name>
-      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails cms: test" uuid="d9c7ec56-f85d-4df6-af34-893cb28a6c6c">
@@ -23,4 +21,3 @@
     </data-source>
   </component>
 </project>
-
