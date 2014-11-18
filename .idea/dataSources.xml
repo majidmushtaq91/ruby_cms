@@ -5,6 +5,8 @@
       <driver-ref>mysql</driver-ref>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://127.0.0.1/simple_cms_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails cms: test" uuid="d9c7ec56-f85d-4df6-af34-893cb28a6c6c">
@@ -21,3 +23,4 @@
     </data-source>
   </component>
 </project>
+
