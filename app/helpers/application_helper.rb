@@ -6,9 +6,9 @@ module ApplicationHelper
     options[:false_text] ||= ''
 
     if boolean
-      content_tag(:span, options[:true_text], :class => 'status true')
+      content_tag(:i, options[:true_text], :class => 'status-true glyphicon glyphicon-ok')
     else
-      content_tag(:span, options[:false_text], :class => 'status false')
+      content_tag(:i, options[:false_text], :class => 'status-false glyphicon glyphicon-remove')
     end
 
   end

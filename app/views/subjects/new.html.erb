@@ -1,4 +1,8 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<nav>
+  <ul class="pager">
+    <li><%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %></li>
+  </ul>
+</nav>
 
 <div class="subjects new">
   <h2>Create Subject</h2>
@@ -7,7 +11,7 @@
 
       <%= render(:partial => "subjects/form", :locals =>  {:f => f}) %>
       <div class="form-buttons">
-        <%= submit_tag("Create Subject") %>
+        <%= submit_tag("Create Subject", :class => "btn btn-success") %>
       </div>
 
   <% end %>
