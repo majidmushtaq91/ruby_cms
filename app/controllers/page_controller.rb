@@ -22,6 +22,7 @@ class PageController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
+    @subjects = Subject.all
 
   end
 
