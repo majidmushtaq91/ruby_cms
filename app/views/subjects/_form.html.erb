@@ -1,16 +1,19 @@
 <div class="form-group">
-
-  <label for="name">Name</label>
-    <%= f.text_field(:name, :class => "form-control", :placeholder => "Name", :id => "name") %>
+  <%= f.label(:name, "Name") %>
+  <%= f.text_field(:name, :class => "form-control", :placeholder => "Name", :id => "name") %>
 </div>
 
 <div class="form-group">
-
-  <label for="position">Position</label>
+    <%= f.label(:position, "Position") %>
     <%= f.text_field(:position, :class => "form-control", :placeholder => "Position", :id => "position") %>
 </div>
 
 <div class="form-group">
-  <label for="visible">Visible</label>
-    <%= f.text_field(:visible, :class => "form-control", :placeholder => "Visible", :id => "visible") %>
+  <%= f.label(:visible, "Visible") %>
+  <%= f.check_box(:visible, :class => "form-control-check", :id => "visible") %>
+</div>
+
+<div class="form-group">
+  <%= f.label(:thumbnail, "Thumbnail") %>
+  <%= f.file_field(:file, :class => "form-control", :id => "thumbnail") %>
 </div>

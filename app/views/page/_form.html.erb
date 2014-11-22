@@ -1,19 +1,19 @@
+<div class="form-group">
+  <%= f.label(:name, "Name") %>
+  <%= f.text_field(:name, :class => "form-control", :placeholder => "Name", :id => "name") %>
+</div>
 
-<table summary="Subject form fields">
-  <tr>
-    <th>Name</th>
-    <td><%= f.text_field(:name) %></td>
-  </tr>
-  <tr>
-    <th>Position</th>
-    <td><%= f.text_field(:position) %></td>
-  </tr>
-  <tr>
-    <th>Visible</th>
-    <td><%= f.select :visible, options_for_select([["Yes", 1], ["No", 2]]) %></td></td>
-  </tr>
-  <tr>
-    <th>Subject ID</th>
-    <td><%= f.text_field(:subject_id) %></td></td>
-  </tr>
-</table>
+<div class="form-group">
+  <%= f.label(:position, "Position") %>
+  <%= f.text_field(:position, :class => "form-control", :placeholder => "Position", :id => "position") %>
+</div>
+
+<div class="form-group">
+  <%= f.label(:visible, "Visible") %>
+  <%= f.check_box(:visible, :class => "form-control-check", :id => "visible") %>
+</div>
+
+<div class="form-group">
+  <%= f.label(:subject_id, "Subject ID") %>
+  <%= f.text_field(:subject_id, :class => "form-control", :id => "subject_id") %>
+</div>

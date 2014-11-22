@@ -1,15 +1,18 @@
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
-
-<div class="page edit">
+<div class="col-xs-6 col-sm-4">
+  <nav>
+    <ul class="pager">
+      <li><%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %></li>
+    </ul>
+  </nav>
   <h2>Create Page</h2>
 
   <%= form_for(:page, :url => {:action => 'create'}) do |f| %>
 
-      <%= render(:partial => "page/form", :locals => {:f => f}) %>
-
+      <%= render(:partial => "page/form", :locals =>  {:f => f}) %>
       <div class="form-buttons">
-        <%= submit_tag("Create Page") %>
+        <%= submit_tag("Create Page", :class => "btn btn-success") %>
       </div>
 
   <% end %>
 </div>
+

@@ -12,7 +12,8 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject = Subject.new({:name => 'Default'})
+    @subject = Subject.new
+    #@subject = Subject.new({:name => 'Default'})
   end
 
   def delete
