@@ -1,3 +1,4 @@
+<%= error_messages_for(@page) %>
 <div class="form-group">
   <%= f.label(:name, "Name") %>
   <%= f.text_field(:name, :class => "form-control", :placeholder => "Name", :id => "name") %>
@@ -5,7 +6,7 @@
 
 <div class="form-group">
   <%= f.label(:position, "Position") %>
-  <%= f.text_field(:position, :class => "form-control", :placeholder => "Position", :id => "position") %>
+  <%= f.select(:position, 1..@page_count, {}, {:class => "form-control"})%>
 </div>
 
 <div class="form-group">
@@ -14,6 +15,6 @@
 </div>
 
 <div class="form-group">
-  <%= f.label(:subject_id, "Subject ID") %>
-  <%= f.text_field(:subject_id, :class => "form-control", :id => "subject_id") %>
+  <%= f.label(:subject_id, "Subject") %>
+  <%= f.select(:subject_id, @subjects.map {|s| [s.name, s.id]}, {}, { :class => 'form-control' }) %>
 </div>

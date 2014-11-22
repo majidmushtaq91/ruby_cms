@@ -1,3 +1,5 @@
+<%= error_messages_for(@subject) %>
+
 <div class="form-group">
   <%= f.label(:name, "Name") %>
   <%= f.text_field(:name, :class => "form-control", :placeholder => "Name", :id => "name") %>
@@ -5,7 +7,7 @@
 
 <div class="form-group">
     <%= f.label(:position, "Position") %>
-    <%= f.text_field(:position, :class => "form-control", :placeholder => "Position", :id => "position") %>
+    <%= f.select(:position, 1..@subject_count, {}, {:id => "position", :class => "form-control"}) %>
 </div>
 
 <div class="form-group">

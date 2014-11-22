@@ -1,3 +1,4 @@
+<%= error_messages_for(@section) %>
 <div class="form-group">
   <%= f.label(:name, "Name") %>
   <%= f.text_field(:name, :class => "form-control", :placeholder => "Name", :id => "name") %>
@@ -5,12 +6,12 @@
 
 <div class="form-group">
   <%= f.label(:position, "Position") %>
-  <%= f.text_field(:position, :class => "form-control", :placeholder => "Position", :id => "position") %>
+  <%= f.select(:position, 1..@section_count, {}, {:class => "form-control"})%>
 </div>
 
 <div class="form-group">
   <%= f.label(:page_id, "Page ID") %>
-  <%= f.text_field(:page_id, :class => "form-control", :placeholder => "Page iD", :id => "page_id") %>
+  <%= f.select(:page_id, Page.all.map {|p| [p.name, p.id]}, {}, { :class => 'form-control' }) %>
 </div>
 
 <div class="form-group">

@@ -2,9 +2,7 @@ class SectionController < ApplicationController
   layout("admin")
 
   def index
-    @section = Section.sorted
-
-
+    @sections = Section.sorted
   end
 
   def show
@@ -13,6 +11,7 @@ class SectionController < ApplicationController
   end
 
   def new
+    @section_count = Section.count + 1
   end
 
   def create
@@ -29,11 +28,12 @@ class SectionController < ApplicationController
     @section = Section.find(params[:id])
     @section.update_attributes(section_params)
     flash[:notice] = "Section Updated"
-    redirect_to(:action => 'index')
+    redirect_to(:action => 'show', :id => @section.id)
   end
 
   def edit
     @section = Section.find(params[:id])
+    @section_count = Section.count
   end
 
   def delete

@@ -1,5 +1,6 @@
 class Section < ActiveRecord::Base
   has_many :section_edits
+  belongs_to :page
 
   scope :visible, lambda {where(:visible => true)}
   scope :invisible, lambda {where(:visible => false)}

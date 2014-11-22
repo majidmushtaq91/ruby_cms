@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
   layout("admin")
 
   def index
-    @subjects = Subject.sorted
+      @subjects = Subject.sorted
   end
 
   def show
@@ -14,6 +14,7 @@ class SubjectsController < ApplicationController
   def new
     @subject = Subject.new
     #@subject = Subject.new({:name => 'Default'})
+    @subject_count = Subject.count + 1
   end
 
   def delete
@@ -41,6 +42,7 @@ class SubjectsController < ApplicationController
 
   def edit
     @subject = Subject.find(params[:id])
+    @subject_count = Subject.count
   end
 
   def update
@@ -52,9 +54,25 @@ class SubjectsController < ApplicationController
       flash[:notice] = 'Subject Updated successfully'
       redirect_to(:action => 'show', :id => @subject.id)
     else
+      @subject_count = Subject.count
       render('edit')
+
     end
 
+  end
+
+  def update_status
+    @subject = Subject.find(params[:id])
+    if params[:status] == 'true'
+
+      @subject.update_attributes(:visible => '1')
+    end
+    if params[:status] == 'false'
+      @subject.update_attributes(:visible => '0')
+    end
+
+    flash[:notice] = 'Subject Updated successfully'
+    redirect_to(:action => 'index', :id => @subject.id)
   end
 
   private

@@ -1,0 +1,11 @@
+<% if object && object.errors.size > 0 %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <strong><%= pluralize(object.errors.size, "error") %></strong>
+
+          <% object.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+
+      </div>
+<% end %>

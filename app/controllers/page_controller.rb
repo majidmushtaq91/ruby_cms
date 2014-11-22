@@ -11,6 +11,8 @@ class PageController < ApplicationController
   end
 
   def new
+    @subjects = Subject.order("position ASC")
+    @page_count = Page.count + 1
   end
 
   def create
@@ -22,7 +24,8 @@ class PageController < ApplicationController
 
   def edit
     @page = Page.find(params[:id])
-    @subjects = Subject.all
+    @subjects = Subject.order("position ASC")
+    @page_count = Page.count
 
   end
 
@@ -32,6 +35,20 @@ class PageController < ApplicationController
 
     flash[:notice] = 'Page Updated successfully'
     redirect_to(:action => 'show', :id => @page.id)
+  end
+
+  def update_status
+    @page = Page.find(params[:id])
+    if params[:status] == 'true'
+
+      @page.update_attributes(:visible => '1')
+    end
+    if params[:status] == 'false'
+      @page.update_attributes(:visible => '0')
+    end
+
+    flash[:notice] = 'Page Updated successfully'
+    redirect_to(:action => 'index', :id => @page.id)
   end
 
   def delete
