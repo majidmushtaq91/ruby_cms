@@ -11,15 +11,23 @@ class PageController < ApplicationController
   end
 
   def new
+    @page = Page.new
     @subjects = Subject.order("position ASC")
     @page_count = Page.count + 1
   end
 
   def create
     @page = Page.new(page_params)
-    @page.save
-    flash[:notice] = 'Page created successfully !'
-    redirect_to(:action => 'index')
+    @page_count = Page.count + 1
+
+    if @page.save
+      flash[:notice] = 'Page created successfully !'
+      redirect_to(:action => 'index')
+    else
+      @subjects = Subject.order("position ASC")
+      @page_count = Page.count + 1
+      render('new')
+    end
   end
 
   def edit
@@ -31,10 +39,15 @@ class PageController < ApplicationController
 
   def update
     @page = Page.find(params[:id])
-    @page.update_attributes(page_params)
+    @subjects = Subject.order("position ASC")
+    @page_count = Page.count
 
-    flash[:notice] = 'Page Updated successfully'
-    redirect_to(:action => 'show', :id => @page.id)
+    if @page.update_attributes(page_params)
+      flash[:notice] = 'Page Updated successfully'
+      redirect_to(:action => 'show', :id => @page.id)
+    else
+        render('edit')
+    end
   end
 
   def update_status

@@ -11,6 +11,7 @@ class SectionController < ApplicationController
   end
 
   def new
+    @section = Section.new
     @section_count = Section.count + 1
   end
 
@@ -20,21 +21,29 @@ class SectionController < ApplicationController
       flash[:notice] = 'Page created !'
       redirect_to(:action => 'index')
     else
+      @section_count = Section.count + 1
       render('new')
     end
-  end
-
-  def update
-    @section = Section.find(params[:id])
-    @section.update_attributes(section_params)
-    flash[:notice] = "Section Updated"
-    redirect_to(:action => 'show', :id => @section.id)
   end
 
   def edit
     @section = Section.find(params[:id])
     @section_count = Section.count
   end
+
+  def update
+    @section = Section.find(params[:id])
+   # @section_count = Section.count
+
+    if @section.update_attributes(section_params)
+      flash[:notice] = "Section Updated"
+      redirect_to(:action => 'show', :id => @section.id)
+    else
+      @section_count = Section.count + 1
+      render('edit')
+    end
+  end
+
 
   def delete
     @section = Section.find(params[:id])

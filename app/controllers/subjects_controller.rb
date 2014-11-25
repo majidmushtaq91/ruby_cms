@@ -2,7 +2,7 @@ class SubjectsController < ApplicationController
   layout("admin")
 
   def index
-      @subjects = Subject.sorted
+    @subjects = Subject.sorted
   end
 
   def show
@@ -17,6 +17,20 @@ class SubjectsController < ApplicationController
     @subject_count = Subject.count + 1
   end
 
+  def create
+    #Instantiate new Object
+    @subject = Subject.new(subject_params)
+    @subject_count = Subject.count + 1
+    #Save Object
+    if @subject.save
+      flash[:notice] = 'Subject Created successfully'
+      redirect_to(:action => 'index')
+    else
+      render('new')
+    end
+
+  end
+
   def delete
     @subject = Subject.find(params[:id])
   end
@@ -27,18 +41,7 @@ class SubjectsController < ApplicationController
     redirect_to(:action => 'index')
   end
 
-  def create
-    #Instantiate new Object
-    @subject = Subject.new(subject_params)
-    #Save Object
-    if @subject.save
-      flash[:notice] = 'Subject Created successfully'
-      redirect_to(:action => 'index')
-    else
-      render('new')
-    end
 
-  end
 
   def edit
     @subject = Subject.find(params[:id])
@@ -56,7 +59,6 @@ class SubjectsController < ApplicationController
     else
       @subject_count = Subject.count
       render('edit')
-
     end
 
   end
