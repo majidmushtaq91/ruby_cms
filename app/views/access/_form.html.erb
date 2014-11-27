@@ -1,0 +1,20 @@
+<%= error_messages_for(@page) %>
+<div class="form-group">
+  <%= f.label(:name, "Name") %>
+  <%= f.text_field(:name, :class => "form-control", :placeholder => "Name", :id => "name") %>
+</div>
+
+<div class="form-group">
+  <%= f.label(:position, "Position") %>
+  <%= f.select(:position, 1..@page_count, {}, {:class => "form-control"})%>
+</div>
+
+<div class="form-group">
+  <%= f.label(:visible, "Visible") %>
+  <%= f.check_box(:visible, :class => "form-control-check", :id => "visible") %>
+</div>
+
+<div class="form-group">
+  <%= f.label(:subject_id, "Subject") %>
+  <%= f.select(:subject_id, @subjects.map {|s| [s.name, s.id]}, {}, { :class => 'form-control' }) %>
+</div>
