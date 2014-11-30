@@ -1,6 +1,9 @@
 class DemoController < ApplicationController
 
   layout false
+
+  before_action :confirm_logged_in
+
   def index
     #render(:template => 'demo/index')
     #render('demo/index')

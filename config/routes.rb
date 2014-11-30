@@ -1,6 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/delete'
+
   get 'admin', :to => 'access#index'
+  get 'logout', :to => 'access#logout'
+  get 'login', :to => 'access#login'
+  #get 'about', :to => 'access#index'
+ # get 'majid/khan', :to => 'page#show', :id => 2
 
   #get 'demo/index'
   #match "demo/index", :to => "demo#index", :via => :get

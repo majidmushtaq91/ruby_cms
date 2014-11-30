@@ -1,6 +1,8 @@
 class PageController < ApplicationController
   layout("admin")
 
+  before_action :confirm_logged_in
+
   def index
     @page = Page.sorted
 
