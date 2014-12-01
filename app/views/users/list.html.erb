@@ -1,0 +1,46 @@
+<div class="index">
+  <h2>Users</h2>
+  <%= link_to("Add new User", {:action => 'new'}, :class => 'btn btn-success') %>
+
+  <table class="table table-bordered" style="margin-top: 10px;">
+    <thead>
+    <tr>
+      <th><i class="glyphicon glyphicon-asterisk"></i> ID</th>
+      <th><i class="glyphicon glyphicon-align-left"></i> First Name</th>
+      <th><i class="glyphicon glyphicon-align-left"></i> Last Name</th>
+      <th><i class="glyphicon glyphicon-bookmark"></i> Username</th>
+      <th><i class="glyphicon glyphicon-eye-open"></i> Status</th>
+      <th><i class="glyphicon glyphicon-link"></i> Email</th>
+      <th><i class="glyphicon glyphicon-calendar"></i>Created At</th>
+      <th><i class="glyphicon glyphicon-link"></i> Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |f| %>
+        <tr>
+          <td><%= f.id %></td>
+          <td><%= f.first_name %> </td>
+          <td><%= f.last_name%></td>
+          <td><%= f.username %></td>
+          <td class="center"><%= status_tag(f.id, f.status) %></td>
+          <td class="center"><%= f.email %></td>
+          <td class="center"><%= f.created_at %></td>
+          <td class="actions">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                Action
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><%= link_to(" Edit", {:action => 'edit', :id => f.id }, :class => 'glyphicon glyphicon-edit', :title => "Edit", :role => "presentation") %></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><%= link_to(" Delete", {:action => 'delete', :id => f.id}, :class => 'glyphicon glyphicon-remove', :title => "Delete") %></li>
+                <li role="presentation" class="divider"></li>
+              </ul>
+            </div>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

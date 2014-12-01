@@ -1,6 +1,6 @@
 class CreateUsers < ActiveRecord::Migration
   def up
-    create_table :users do |t|
+    create_table :admin_users do |t|
       t.column "first_name", :string, :limit => 30, :null => false
       t.column "last_name", :string, :limit => 30, :null => false
       #Short commands

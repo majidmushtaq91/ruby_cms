@@ -57,6 +57,19 @@ class SectionController < ApplicationController
     redirect_to(:action => 'index')
   end
 
+  def update_status
+    @section = Section.find(params[:id])
+    if params[:status] == 'true'
+
+      @section.update_attributes(:visible => '1')
+    end
+    if params[:status] == 'false'
+      @section.update_attributes(:visible => '0')
+    end
+
+    flash[:notice] = 'Section Updated successfully'
+    redirect_to(:action => 'index', :id => @section.id)
+  end
 
   private
   def section_params
